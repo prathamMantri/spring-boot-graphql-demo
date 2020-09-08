@@ -1,0 +1,30 @@
+schema {
+    query: Query
+}
+
+type Query {
+    allVehicles: [Vehicle]
+    vehicle(vin : String): Vehicle
+    allMakes: [Make]
+    make(makeCode: String): Make
+    allModels:[Model]
+    model(modelCode: String): Model
+}
+
+type Vehicle {
+    vin: String
+    make: Make
+    model: Model
+    year: Int
+}
+
+type Make {
+    makeCode: String,
+    makeName: String,
+}
+
+type Model{
+    modelCode: String
+    modelName: String
+    makeCode: String
+}
